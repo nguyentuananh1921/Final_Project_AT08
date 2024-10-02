@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test Function Process" verbose="1" parallel="tests" thread-count="3">
+    <test name="Client Test Function Process">
+        <classes>
+            <class name="anhntTest.PageObjectModel.testcases.ClientsTest">
+                <methods>
+                    <include name="testClientCreationFunctionalProcess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Project Test Function Process">
+        <classes>
+            <class name="anhntTest.PageObjectModel.testcases.ProjectsTest">
+                <methods>
+                    <include name="testProjectCreationFunctionalProcess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Test Function Process">
+        <classes>
+            <class name="anhntTest.PageObjectModel.testcases.TaskTest">
+                <methods>
+                    <include name="testCreateTaskFunctionProcess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

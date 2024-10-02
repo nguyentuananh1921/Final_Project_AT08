@@ -46,7 +46,7 @@ public class ProjectsTest extends BaseTest {
                 .verifyDeleteProject(dataProject);
     }
 
-    @Test(priority = 4,dependsOnMethods = "testDeleteProject",dataProvider = "data_Info_Project", dataProviderClass = DataProviderFactory.class)
+    @Test(priority = 4,dataProvider = "data_Info_Project", dataProviderClass = DataProviderFactory.class)
     public void testProjectCreationFunctionalProcess(Hashtable<String, String> dataProject){
         loginPage.loginHRM(ConfigData.EMAIL,ConfigData.PASSWORD)
                 .verifyLoginSuccess()

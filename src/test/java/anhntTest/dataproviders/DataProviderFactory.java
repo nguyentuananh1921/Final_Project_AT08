@@ -25,7 +25,7 @@ public class DataProviderFactory {
     @DataProvider(name = "data_Info_Task")
     public Object[][] dataTask() {
         ExcelHelper excelHelper = new ExcelHelper();
-        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "Task",2,3);
+        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "Task");
     }
 
     @DataProvider(name = "data_Info_EditProjectStatus")

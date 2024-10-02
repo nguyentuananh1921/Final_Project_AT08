@@ -4,8 +4,21 @@
     <test name="All Test Case">
         <classes>
             <class name="anhntTest.PageObjectModel.testcases.LoginTest"/>
-            <class name="anhntTest.PageObjectModel.testcases.ClientsTest"/>
-            <class name="anhntTest.PageObjectModel.testcases.ProjectsTest"/>
+            <class name="anhntTest.PageObjectModel.testcases.ClientsTest">
+                <methods>
+                    <exclude name="testClientCreationFunctionalProcess"/>
+                </methods>
+            </class>
+            <class name="anhntTest.PageObjectModel.testcases.ProjectsTest">
+                <methods>
+                    <exclude name="testProjectCreationFunctionalProcess"/>
+                </methods>
+            </class>
+            <class name="anhntTest.PageObjectModel.testcases.TaskTest">
+                <methods>
+                    <exclude name="testTaskCreationFunctionalProcess"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

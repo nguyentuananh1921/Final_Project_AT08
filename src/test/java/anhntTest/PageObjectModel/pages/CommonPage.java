@@ -19,12 +19,13 @@ public class CommonPage {
     public By menuClients = By.xpath("//span[normalize-space()='Manage Clients']");
 
     public By buttonAddNew = By.xpath("//a[normalize-space()='Add New']");
-    private By inputStartDate = By.xpath("//input[@name='start_date']");
-    private By inputEndDate = By.xpath("//input[@name='end_date']");
-    private By inputAddSummary = By.xpath("//form[contains(@name,'add')]//textarea[@name='summary']");
-    private By inputUpdateSummary = By.xpath("//form[contains(@name,'update')]//textarea[@name='summary']");
-    private By iframeDescription = By.xpath("//iframe[@title='Editable area. Press F10 for toolbar.']");
-    private By inputDescription = By.xpath("//body");
+    public By inputStartDate = By.xpath("//input[@name='start_date']");
+    public By inputEndDate = By.xpath("//input[@name='end_date']");
+    public By inputAddSummary = By.xpath("//textarea[@name='summary']");
+    public By inputUpdateSummary = By.xpath("//form[contains(@name,'update')]//textarea[@name='summary']");
+    public By iframeDescription = By.xpath("//iframe[@title='Editable area. Press F10 for toolbar.']");
+    public By inputDescription = By.xpath("//body");
+    public By selectTeam = By.xpath("//select[@name='assigned_to[]']");
     public By buttonSave = By.xpath("//span[normalize-space()='Save']");
     public By inputSearch = By.xpath("//div[@id='xin_table_filter']//input[@type='search']");
 
@@ -61,7 +62,7 @@ public class CommonPage {
         return this;
     }
     public CommonPage setTextAddSummary(String content){
-        WebUI.setText(inputAddSummary,content);
+        WebUI.clearAndSetText(inputAddSummary,content);
         return this;
     }
     public CommonPage setTextUpdateSummary(String content){
@@ -76,7 +77,13 @@ public class CommonPage {
     }
 
     public CommonPage setTextInputSearch(String value){
+        WebUI.waitForPageLoaded();
         WebUI.clearAndSetText(inputSearch,value);
+        return this;
+    }
+
+    public CommonPage selectOptionTeam(String team){
+        WebUI.selectOption(selectTeam, team);
         return this;
     }
     public TaskPage clickMenuTask(){

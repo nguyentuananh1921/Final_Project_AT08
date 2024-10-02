@@ -12,7 +12,7 @@ public class ProjectsPage extends CommonPage {
     private By selectClients = By.xpath("//select[@id='client_id']");
     private By inputEstimatedHour = By.xpath("//input[@name='budget_hours']");
     private By selectPriority = By.xpath("//select[@name='priority']");
-    private By selectTeam = By.xpath("//select[@name='assigned_to[]']");
+
     private By buttonUpdateProject = By.xpath("//span[normalize-space()='Update Project']");
 
     private By textTitle = By.xpath("//table//tr//td[normalize-space()='Title']/following-sibling::td");
@@ -55,11 +55,11 @@ public class ProjectsPage extends CommonPage {
         WebUI.selectOption(selectClients, data.get("CLIENT"));
         WebUI.setText(inputEstimatedHour, data.get("HOUR"));
         WebUI.selectOption(selectPriority, data.get("PRIORITY"));
-        setTextStartDate(data.get("START DATE"));
-        setTextEndtDate(data.get("END DATE"));
-        setTextAddSummary(data.get("SUMMARY"));
-        WebUI.selectOption(selectTeam, data.get("TEAM"));
-        setTextDescription(data.get("DESCRIPTION"));
+        setTextStartDate(data.get("START DATE")).
+        setTextEndtDate(data.get("END DATE")).
+        setTextAddSummary(data.get("SUMMARY")).
+        selectOptionTeam(data.get("TEAM")).
+        setTextDescription(data.get("DESCRIPTION")).
         clickButtonSave();
         return this;
     }
@@ -96,6 +96,7 @@ public class ProjectsPage extends CommonPage {
     public ProjectsPage deleteProject(Hashtable<String, String> data) {
         setTextInputSearch(data.get("TITLE"));
         clickButtonFirstDelete();
+
         clickButtonConfirm();
         return this;
     }

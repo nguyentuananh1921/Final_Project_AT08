@@ -92,12 +92,13 @@ public class Data {
             dataFakerHelper = new DataFakerHelper(ConfigData.FAKER_LANGUAGE);
             for (int i = 1; i <= ConfigData.AMOUNT_OF_DATA; i++) {
                 excelHelper.setCellData("DemoProject 0"+i,"PROJECT",i);
-                excelHelper.setCellData(dataFakerHelper.getFirstName(), "TITLE", i);
+                excelHelper.setCellData(dataFakerHelper.getFullName()+" "+dataFakerHelper.getRandomNumber(1,99999),"TITLE", i);
                 excelHelper.setCellData(dataFakerHelper.getDate(), "START DATE", i);
                 excelHelper.setCellData(dataFakerHelper.getDate(), "END DATE", i);
                 excelHelper.setCellData(dataFakerHelper.getRandomNumber(3, 10), "HOUR", i);
                 excelHelper.setCellData("Summary Task: " + dataFakerHelper.getDescribe(Integer.parseInt(dataFakerHelper.getRandomNumber(15, 20))), "SUMMARY", i);
                 excelHelper.setCellData("Description Task: "+dataFakerHelper.getDescribe(Integer.parseInt(dataFakerHelper.getRandomNumber(7, 10))), "DESCRIPTION", i);
+                excelHelper.setCellData(dataFakerHelper.getOptions(arrTeam),"TEAM",i);
             }
         }
     }
