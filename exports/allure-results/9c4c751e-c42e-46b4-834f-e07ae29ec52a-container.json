@@ -1,0 +1,1 @@
+{"uuid":"9c4c751e-c42e-46b4-834f-e07ae29ec52a","name":"ClientManagementTests","children":["847215fe-de77-4c33-a7c5-4c1fdffc8445"],"befores":[{"name":"setupAllData","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1727849525660,"stop":1727849533605}],"afters":[],"start":1727849525613,"stop":1727849941586}

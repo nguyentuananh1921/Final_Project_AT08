@@ -25,8 +25,6 @@ public class TestListener implements ITestListener {
     @Override
     public void onStart(ITestContext iTestContext) {
         LogUtils.info("⭐\uFE0F ********* START TESTING " + iTestContext.getName() + " *********");
-        PropertiesHelper.loadAllFiles();
-        Data.setUpAllData();
     }
 
     @Override

@@ -95,5 +95,4 @@ public class ProjectsTest extends BaseTest {
                 .deleteAttachFile(dataAttachFile)
                 .verifyDeleteAttachFile();
     }
-
 }

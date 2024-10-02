@@ -15,6 +15,11 @@ import org.testng.annotations.*;
 
 @Listeners({TestListener.class})
 public class BaseTest extends CommonPage {
+    @BeforeSuite
+    public void setupAllData(){
+        PropertiesHelper.loadAllFiles();
+        Data.setUpAllData();
+    }
 
     @BeforeMethod
     @Parameters({"browser"})

@@ -10,11 +10,6 @@ public class DataProviderFactory {
     DataFakerHelper dataFakerHelper;
 
     private String excelFilePath = ConfigData.EXCEL_FILE_DATA_PATH;
-    @DataProvider(name = "data_Login"/*, parallel = true*/)
-    public Object[][] dataLogin() {
-        ExcelHelper excelHelper = new ExcelHelper();
-        return excelHelper.getExcelData(SystemHelper.getCurrentDir() + excelFilePath, "Login");
-    }
 
     @DataProvider(name = "data_Info_Clients")
     public Object[][] dataClients() {
@@ -30,18 +25,18 @@ public class DataProviderFactory {
     @DataProvider(name = "data_Info_Task")
     public Object[][] dataTask() {
         ExcelHelper excelHelper = new ExcelHelper();
-        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "Task");
+        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "Task",2,3);
     }
 
     @DataProvider(name = "data_Info_EditProjectStatus")
     public Object[][] dataProjectStatus() {
         ExcelHelper excelHelper = new ExcelHelper();
-        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "EditProjectStatus");
+        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "EditProjectStatus",2,3);
     }
     @DataProvider(name = "data_AttachFile")
     public Object[][] dataAttachFile() {
         ExcelHelper excelHelper = new ExcelHelper();
-        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "AttachFile");
+        return excelHelper.getDataHashTable(SystemHelper.getCurrentDir() + excelFilePath, "AttachFile",2,3);
     }
 
 

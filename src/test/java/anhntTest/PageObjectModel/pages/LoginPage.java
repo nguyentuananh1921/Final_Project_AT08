@@ -29,7 +29,7 @@ public class LoginPage extends CommonPage {
         clickLoginButton();
         WebUI.waitForPageLoaded();
         for (int i = 0; i < 1; i++) {
-            if (WebUI.verifyElementIsDisplay(toastMessage)) {
+            if (WebUI.verifyElementIsDisplay(toastMessage,3)) {
                 if (WebUI.getTextElement(toastMessage).contains("Max no. of attempts. Try again after a minute.")) {
                     WebUI.sleep(10);
                     clickLoginButton();
@@ -47,7 +47,6 @@ public class LoginPage extends CommonPage {
         enterEmail(email);
         enterPassword(pass);
         clickLoginButton();
-        WebUI.waitForPageLoaded();
         for (int i = 0; i < 1; i++) {
             if (WebUI.verifyElementIsDisplay(toastMessage,3)) {
                 if (WebUI.getTextElement(toastMessage).contains("Max no. of attempts. Try again after a minute.")) {

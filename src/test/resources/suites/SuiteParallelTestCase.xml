@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite test All" verbose="1" parallel="methods" thread-count="3">
+    <test name="All Test Case">
+        <classes>
+            <class name="anhntTest.PageObjectModel.testcases.LoginTest"/>
+            <class name="anhntTest.PageObjectModel.testcases.ClientsTest"/>
+            <class name="anhntTest.PageObjectModel.testcases.ProjectsTest"/>
+        </classes>
+    </test>
+</suite>

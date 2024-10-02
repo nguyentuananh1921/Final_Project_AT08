@@ -56,7 +56,7 @@ public class Data {
             excelHelper.setExcelFile(SystemHelper.getCurrentDir() + "src/test/resources/exceldata/DataHRM.xlsx", "Projects");
             dataFakerHelper = new DataFakerHelper(ConfigData.FAKER_LANGUAGE);
             for (int i = 1; i <= ConfigData.AMOUNT_OF_DATA; i++) {
-                excelHelper.setCellData(dataFakerHelper.getFirstName(), "TITLE", i);
+                excelHelper.setCellData(dataFakerHelper.getFullName()+" " +dataFakerHelper.getRandomNumber(1,9999), "TITLE", i);
                 excelHelper.setCellData(dataFakerHelper.getOptions(arrClients), "CLIENT", i);
                 excelHelper.setCellData(dataFakerHelper.getRandomNumber(1, 10), "HOUR", i);
                 excelHelper.setCellData(dataFakerHelper.getOptions(arrPriority), "PRIORITY", i);

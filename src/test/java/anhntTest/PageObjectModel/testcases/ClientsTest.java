@@ -69,6 +69,8 @@ public class ClientsTest extends BaseTest {
                 .clickMenuClients()
                 .enterEditClient(dataClients) //Chỉnh sửa thông tin tài khoản khách
                 .clickMenuClients()
+                .verifyEditClient(dataClients)
+                .clickMenuClients()
                 .deleteClient(dataClients)  //Xóa tài khoản khách khỏi hệ thống
                 .checkDeleteClient(dataClients)
                 .clickButtonLogOut()

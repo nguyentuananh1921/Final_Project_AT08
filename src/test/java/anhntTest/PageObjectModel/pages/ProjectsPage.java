@@ -85,9 +85,10 @@ public class ProjectsPage extends CommonPage {
     public ProjectsPage verifyEditProject(Hashtable<String, String> data) {
         setTextInputSearch(data.get("TITLE"));
         clickButtonViewDtails();
+        WebUI.sleep(2);
         SoftAssert softAssert = new SoftAssert();
         WebUI.softAssertEquals(softAssert,WebUI.getTextElement(textSummary).replaceFirst("Summary", "").trim(), (data.get("SUMMARY").trim() + "edited").trim(), "Summary does not match!");
-        WebUI.softAssertEquals(softAssert,WebUI.getTextElement(texDescription).replaceFirst("Description", "").trim(), (data.get("DESCRIPTION") + "edited").trim(), "Summary does not match!");
+        WebUI.softAssertEquals(softAssert,WebUI.getTextElement(texDescription).replaceFirst("Description", "").trim(), (data.get("DESCRIPTION") + "edited").trim(), "Description does not match!");
         WebUI.softAssertAll(softAssert);
         return this;
     }
