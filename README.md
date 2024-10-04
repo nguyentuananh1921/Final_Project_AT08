@@ -3,7 +3,7 @@
 This project aims to automate the testing process for the website https://hrm.anhtester.com/ using automated tests.It includes various functionalities including managing clients, projects, tasks, updating project status, attaching files and generating logs, reports, video recordings and screenshots for failed cases using Allure or Extent frameworks. Additionally, it supports parallel execution for efficient testing and uses configuration parameters from properties files and test data from Excel files.
 ## Features
 ### Manage Clinets
-- Add, edit, delete clients;
+- Add, edit, delete clients.
 ### Authentication Testing
 - Test login functionality for newly created client accounts.
 
@@ -12,7 +12,7 @@ This project aims to automate the testing process for the website https://hrm.an
   - Check successful login.
 ### Manage Projects
 - Add, edit, and delete projects.
-  - Edit Projects
+  - Edit Projects status
   - Task
 
 - Add Task for Projects
@@ -22,6 +22,8 @@ This project aims to automate the testing process for the website https://hrm.an
 - Update status for Projects
   - File Attachment
   - Add attachments to projects.
+### Manage Tasks
+- Add, edit, and delete tasks.
 ### Logging and Reporting
 - Generate logs, reports, video records, and screenshots for failed test cases.
   - Utilizes Allure or Extent frameworks.
