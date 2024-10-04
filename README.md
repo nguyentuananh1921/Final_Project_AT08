@@ -1,6 +1,6 @@
 # Final_Project_AT08
 ## OverView
-This project aims to automate the testing process for the website https://hrm.anhtester.com/ using automated tests.It includes various functionalities including managing clients, projects, tasks, updating project status, attaching files and generating logs, reports, video recordings and screenshots for failed cases using Allure or Extent frameworks. Additionally, it supports parallel execution for efficient testing and uses configuration parameters from properties files and test data from Excel files.
+This project aims to automate the testing process for the website https://hrm.anhtester.com/ using automated tests.It includes various functionalities including managing **clients**, **projects**, **tasks**, updating **project status**, **attaching files** and generating logs, reports, video recordings and screenshots for failed cases using **Allure** or **Extent** frameworks. Additionally, it supports parallel execution for efficient testing and uses configuration parameters from properties files and test data from Excel files.
 ## Features
 ### Manage Clinets
 - Add, edit, delete clients.
