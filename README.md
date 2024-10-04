@@ -25,7 +25,7 @@ This project aims to automate the testing process for the website https://hrm.an
 ### Manage Tasks
 - Add, edit, and delete tasks.
 ### Logging and Reporting
-- Generate logs, reports, video records, and screenshots for failed test cases.
+- Generate logs, reports, and screenshots for failed test cases.
   - Utilizes Allure or Extent frameworks.
 ### Parallel Execution
 - Execute tests in parallel for optimal efficiency.
