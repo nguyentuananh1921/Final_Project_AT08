@@ -3,7 +3,9 @@
 This project aims to automate the testing process for the website https://hrm.anhtester.com/ using automated tests.It includes various functionalities including managing **clients**, **projects**, **tasks**, updating **project status**, **attaching files** and generating logs, reports, video recordings and screenshots for failed cases using **Allure** or **Extent** frameworks. Additionally, it supports parallel execution for efficient testing and uses configuration parameters from properties files and test data from Excel files.
 ## Features
 ### Manage Clinets
-- Add, edit, delete clients.
+- Add clients: Ensure that users can add new clients to the system.
+-  Edit clients: Verify that editing client information works correctly.
+-  delete clients: Ensure that the client can be removed from the system.
 ### Authentication Testing
 - Test login functionality for newly created client accounts.
 
@@ -11,9 +13,11 @@ This project aims to automate the testing process for the website https://hrm.an
   - Check invalid password.
   - Check successful login.
 ### Manage Projects
-- Add, edit, and delete projects.
-  - Edit Projects status
-  - Task
+- Add projects: Make sure users can create new projects.
+- Edit projects: Check the project's ability to update information.
+- delete projects: Verify that the project can be deleted from the system.
+  - Edit Projects status: Make sure that the project status is edited properly.
+  - Add Task: Make sure the task is added to the project
 
 - Add Task for Projects
   - Delete Task
@@ -23,7 +27,9 @@ This project aims to automate the testing process for the website https://hrm.an
   - File Attachment
   - Add attachments to projects.
 ### Manage Tasks
-- Add, edit, and delete tasks.
+- Add task: Test the ability to add new tasks to the system.
+- Edit task: Ensure that editing of the current task is done correctly.
+- Delete tasks: Confirm that the task can be deleted successfully.
 ### Logging and Reporting
 - Generate logs, reports, and screenshots for failed test cases.
   - Utilizes Allure or Extent frameworks.
