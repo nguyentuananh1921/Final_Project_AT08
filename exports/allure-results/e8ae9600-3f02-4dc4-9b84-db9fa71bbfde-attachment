@@ -1,0 +1,1 @@
+Get text of element: By.xpath: //form[contains(@name,'update')]//textarea[@name='summary'] is: Summary Task: Vero laudantium ipsa libero quaerat nesciunt optio sunt voluptatum quaerat ab sit necessitatibus vero vitae libero qui repudiandae nostrum modi vitae libero velit recusandae.eidted
