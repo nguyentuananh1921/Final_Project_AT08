@@ -21,4 +21,23 @@
             </class>
         </classes>
     </test>
+    <test name="Functional Testing Process">
+        <classes>
+            <class name="anhntTest.PageObjectModel.testcases.ClientsTest">
+                <methods>
+                    <include name="testClientCreationFunctionalProcess"/>
+                </methods>
+            </class>
+            <class name="anhntTest.PageObjectModel.testcases.ProjectsTest">
+                <methods>
+                    <include name="testProjectCreationFunctionalProcess"/>
+                </methods>
+            </class>
+            <class name="anhntTest.PageObjectModel.testcases.TaskTest">
+                <methods>
+                    <include name="testTaskCreationFunctionalProcess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

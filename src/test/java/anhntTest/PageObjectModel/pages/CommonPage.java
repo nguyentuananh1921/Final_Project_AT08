@@ -29,7 +29,7 @@ public class CommonPage {
     public By buttonSave = By.xpath("//span[normalize-space()='Save']");
     public By inputSearch = By.xpath("//div[@id='xin_table_filter']//input[@type='search']");
 
-    public By buttonLogOut = By.xpath("//div[@class=\"page-header\"]//a[normalize-space()='Logout']");
+        public By buttonLogOut = By.xpath("//div[@class='page-header']//a[normalize-space()='Logout']");
     public By toastMessage = By.xpath("//div[@class='toast-message']");
     public By buttonConfirm = By.xpath("//span[normalize-space()='Confirm']");
 
@@ -51,6 +51,7 @@ public class CommonPage {
 
     public CommonPage clickButtonAddNew(){
         WebUI.clickElement(buttonAddNew);
+        WebUI.sleep(1);
         return this;
     }
     public CommonPage setTextStartDate(String date){
@@ -77,8 +78,9 @@ public class CommonPage {
     }
 
     public CommonPage setTextInputSearch(String value){
-        WebUI.waitForPageLoaded();
         WebUI.clearAndSetText(inputSearch,value);
+        WebUI.sleep(2);
+        WebUI.waitForPageLoaded();
         return this;
     }
 
@@ -88,10 +90,12 @@ public class CommonPage {
     }
     public TaskPage clickMenuTask(){
         WebUI.clickElement(menuTask);
+        WebUI.sleep(1);
         return new TaskPage();
     }
     public ProjectsPage clickMenuProject(){
         WebUI.clickElement(menuProjects);
+        WebUI.sleep(1);
         return new ProjectsPage();
     }
 
@@ -100,6 +104,7 @@ public class CommonPage {
         WebUI.scrollToElement(menuClients,"500");
         WebUI.waitForPageLoaded();
         WebUI.clickElement(menuClients);
+        WebUI.sleep(1);
         return new ClientsPage();
     }
     public HomePage getHomePage(){
@@ -137,9 +142,10 @@ public class CommonPage {
         Assert.assertTrue(WebUI.verifyElementIsDisplay(textNoRecordsAvailable),"The data is still displayed in the table!");
         return this;
     }
-    
+
     public CommonPage clickButtonEditTab(){
         WebUI.clickElement(buttonEditTab);
+        WebUI.sleep(1);
         return this;
     }
     public int getTotalRecords(){

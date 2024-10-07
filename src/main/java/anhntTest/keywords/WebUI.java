@@ -35,6 +35,7 @@ public class WebUI {
 
     @Step("Check data: {1} in Table by column {2}")
     public static void checkDataInTableByColumn_Contains(int column, String value, String columnName, String additionalXpath) {
+        waitForPageLoaded();
         LogUtils.info("\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
         ExtentTestManager.logMessage(Status.INFO, "\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
         //Xác định số dòng của table sau khi search
@@ -306,6 +307,7 @@ public class WebUI {
         clearText(by);
         sleep(1);
         setText(by, value);
+        waitForPageLoaded();
     }
 
     @Step("Clear text: on element {0}")

@@ -50,6 +50,7 @@ public class ClientsTest extends BaseTest {
                 .deleteClient(dataClients)
                 .checkDeleteClient(dataClients);
     }
+
     @Test(priority = 4,dataProvider = "data_Info_Clients", dataProviderClass = DataProviderFactory.class)
     public void testClientCreationFunctionalProcess(Hashtable<String, String> dataClients){
         loginPage.loginHRM(ConfigData.EMAIL, ConfigData.PASSWORD)
