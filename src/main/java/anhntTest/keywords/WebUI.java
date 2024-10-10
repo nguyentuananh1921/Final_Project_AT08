@@ -37,7 +37,7 @@ public class WebUI {
     public static void checkDataInTableByColumn_Contains(int column, String value, String columnName, String additionalXpath) {
         waitForPageLoaded();
         LogUtils.info("\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
-        ExtentTestManager.logMessage(Status.INFO, "\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
+        ExtentTestManager.logMessage(Status.INFO, " Check data " + value + " in Table by column " + columnName);
         //Xác định số dòng của table sau khi search
         List<WebElement> row = DriverManager.getDriver().findElements(By.xpath(additionalXpath + "//table//tbody/tr"));
         int rowTotal = row.size(); //Lấy ra số dòng
@@ -56,7 +56,7 @@ public class WebUI {
     @Step("Check data: {1} in Table by column {2}")
     public static void checkDataInTableByColumn_Equals(int column, String value, String columnName) {
         LogUtils.info("\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
-        ExtentTestManager.logMessage(Status.INFO, "\uD83D\uDFE2 Check data " + value + " in Table by column " + columnName);
+        ExtentTestManager.logMessage(Status.INFO, " Check data " + value + " in Table by column " + columnName);
         //Xác định số dòng của table sau khi search
         List<WebElement> row = DriverManager.getDriver().findElements(By.xpath("//table//tbody/tr"));
         int rowTotal = row.size(); //Lấy ra số dòng
@@ -100,7 +100,7 @@ public class WebUI {
 
             JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
             js.executeScript("arguments[0].style.display='none';", element);
-            ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Hidden element by: " + by);
+            ExtentTestManager.logMessage(Status.PASS, " Hidden element by: " + by);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,7 +114,7 @@ public class WebUI {
             JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
             js.executeScript("arguments[0].style.display='block';", element);
             ((JavascriptExecutor) DriverManager.getDriver()).executeScript("arguments[0].style.pointerEvents = 'auto';", element);
-            ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Visible element by: " + by);
+            ExtentTestManager.logMessage(Status.PASS, " Visible element by: " + by);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -126,7 +126,7 @@ public class WebUI {
             // Thay đổi thuộc tính display để hiển thị phần tử
             JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
         js.executeScript("arguments[0]."+attribute+"=arguments[1];", element, value);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Set Attribute element by: " + by +", attribute: "+attribute+"with value: " +value);
+        ExtentTestManager.logMessage(Status.PASS, " Set Attribute element by: " + by +", attribute: "+attribute+"with value: " +value);
     }
     @Step("Select option by: {0} with value : {1}")
     public static void selectByVisibleText(By by, String visibleText) {
@@ -141,7 +141,7 @@ public class WebUI {
             Select select = new Select(selectElement);
             select.selectByVisibleText(visibleText);
             js.executeScript("arguments[0].style.display='none';", selectElement);
-            ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Select option by:" + by + " with value:" + visibleText);
+            ExtentTestManager.logMessage(Status.PASS, " Select option by:" + by + " with value:" + visibleText);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -210,7 +210,7 @@ public class WebUI {
         DriverManager.getDriver().get(url);
         sleep(STEP_TIME);
         LogUtils.info("\uD83C\uDF10 Open URL: " + url);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Open URL: " + url);
+        ExtentTestManager.logMessage(Status.PASS, " Open URL: " + url);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("openURL_" + url));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("openURL_" + url));
@@ -224,7 +224,7 @@ public class WebUI {
         waitForPageLoaded();
         sleep(STEP_TIME);
         LogUtils.info("Refresh Page on Web");
-        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Refresh Page on Web");
+        ExtentTestManager.logMessage(Status.PASS, " Refresh Page on Web");
         AllureManager.saveTextLog("Refresh Page on Web");
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("refreshPageWeb_"));
@@ -241,7 +241,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).click();
         LogUtils.info("\uD83D\uDFE2 Click element: " + by);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
@@ -260,7 +260,7 @@ public class WebUI {
             waitForElementClickable(by);
             getWebElement(by).click();
             LogUtils.info("\uD83D\uDFE2 Hover and Click element: " + by);
-            ExtentTestManager.logMessage(Status.PASS, "➡\uFE0F Hover to element by :  " + by);
+            ExtentTestManager.logMessage(Status.PASS, " Hover to element by :  " + by);
             if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
                 CaptureHelper.screenshot(SystemHelper.makeSlug("hover_click_element_" + by));
                 ExtentTestManager.addScreenshot(SystemHelper.makeSlug("hover_click_element_" + by));
@@ -279,7 +279,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).click();
         LogUtils.info("\uD83D\uDFE2 Click element: " + by);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Click element: " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Click element: " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("clickElement_" + by.toString()));
@@ -294,7 +294,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).sendKeys(value);
         LogUtils.info("\uD83D\uDFE2 Set text: " + value + " on element " + by);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set text: " + value + " on element " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Set text: " + value + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setText_" + by.toString()));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("setText_" + by.toString()));
@@ -317,7 +317,7 @@ public class WebUI {
         sleep(STEP_TIME);
         getWebElement(by).clear();
         LogUtils.info("\uD83D\uDFE2 Clear text: on element " + by);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Clear text: on element " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Clear text: on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setText_" + by.toString()));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("setText_" + by.toString()));
@@ -330,7 +330,7 @@ public class WebUI {
         waitForPageLoaded();
         getWebElement(by).sendKeys(keys);
         LogUtils.info("\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83D\uDFE2 Set key: " + keys.name() + " on element " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Set key: " + keys.name() + " on element " + by);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("setKey_" + by.toString()));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("setKey_" + by.toString()));
@@ -344,7 +344,7 @@ public class WebUI {
         sleep(STEP_TIME);
         String text = getWebElement(by).getText();
         LogUtils.info("➡\uFE0F Get text: " + text);
-        ExtentTestManager.logMessage(Status.PASS, "➡\uFE0F Get text: " + text);
+        ExtentTestManager.logMessage(Status.PASS, " Get text: " + text);
         AllureManager.saveTextLog("Get text of element: " + by +" is: "+ text);
         return text;
     }
@@ -411,7 +411,7 @@ public class WebUI {
         try {
             Actions action = new Actions(DriverManager.getDriver());
             action.moveToElement(getWebElement(by)).perform();
-            ExtentTestManager.logMessage(Status.PASS, "➡\uFE0F Move to element: " + by);
+            ExtentTestManager.logMessage(Status.PASS, "Move to element: " + by);
             return true;
         } catch (Exception e) {
             LogUtils.error(e.getMessage());
@@ -470,7 +470,7 @@ public class WebUI {
         By buttonConfirm = By.xpath("//div[not(contains(@class, 'hidden')) and contains(@class,'dtp animated fadeIn')]//button[normalize-space()='OK']");
         clickElement(buttonSelectDay);
         clickElement(buttonConfirm);
-        ExtentTestManager.logMessage(Status.INFO, "➡\uFE0F Selected time :  " + time);
+        ExtentTestManager.logMessage(Status.INFO, " Selected time :  " + time);
         if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
             CaptureHelper.screenshot(SystemHelper.makeSlug("Selected_date_" + time));
             ExtentTestManager.addScreenshot(SystemHelper.makeSlug("Selected_date_" + time));
@@ -483,7 +483,7 @@ public class WebUI {
         try {
             Actions action = new Actions(DriverManager.getDriver());
             action.moveToElement(getWebElement(by)).perform();
-            ExtentTestManager.logMessage(Status.INFO, "➡\uFE0F Hover to element by :  " + by);
+            ExtentTestManager.logMessage(Status.INFO, " Hover to element by :  " + by);
             AllureManager.saveTextLog("Hover to element by :  " + by);
             if (PropertiesHelper.getValue("SCREENSHOT_STEP_ALL").equals("true")) {
                 CaptureHelper.screenshot(SystemHelper.makeSlug("hover_element_" + by));
@@ -623,35 +623,35 @@ public class WebUI {
     public static void assertTrue(boolean status, String expected) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert equals: " + status + " \uD83D\uDFF0 " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert True: " + status + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Assert True: " + status + " \uD83D\uDFF0 " + expected);
         Assert.assertTrue(status);
     }
 
     public static boolean verifyEquals(Object actual, Object expected) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Verify equals: " + actual + " \uD83D\uDFF0 " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Verify equals: " + actual + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Verify equals: " + actual + " \uD83D\uDFF0 " + expected);
         return actual.equals(expected);
     }
 
     public static void assertEquals(Object actual, Object expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
         Assert.assertEquals(actual, expected, message);
     }
 
     public static void softAssertEquals(SoftAssert softAssert,Object actual, Object expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Assert equals: " + actual + " \uD83D\uDFF0 " + expected);
         softAssert.assertEquals(actual, expected, message);
     }
 
     public static boolean verifyContains(String actual, String expected) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Verify contains: " + actual + " and " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Verify contains: " + actual + " and " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Verify contains: " + actual + " and " + expected);
         boolean check = actual.contains(expected);
         return check;
     }
@@ -659,7 +659,7 @@ public class WebUI {
     public static void assertContains(String actual, String expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert contains: " + actual + " and " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert contains: " + actual + " and " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Assert contains: " + actual + " and " + expected);
         boolean check = actual.contains(expected);
         Assert.assertTrue(check, message);
     }
@@ -667,7 +667,7 @@ public class WebUI {
     public static void softAssertContains(SoftAssert softAssert,String actual, String expected, String message) {
         waitForPageLoaded();
         LogUtils.info("⭐\uFE0F Assert contains: " + actual + " and " + expected);
-        ExtentTestManager.logMessage(Status.PASS, "⭐\uFE0F Assert contains: " + actual + " and " + expected);
+        ExtentTestManager.logMessage(Status.PASS, " Assert contains: " + actual + " and " + expected);
         boolean check = actual.contains(expected);
         softAssert.assertTrue(check, message);
     }
@@ -863,12 +863,12 @@ public class WebUI {
     public static void goToIframe(By by) {
         WebElement frame = getWebElement(by);
         DriverManager.getDriver().switchTo().frame(frame);
-        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Go to Iframe by: " + by);
+        ExtentTestManager.logMessage(Status.PASS, " Go to Iframe by: " + by);
     }
 
     public static void exitIframe() {
         DriverManager.getDriver().switchTo().defaultContent();
-        ExtentTestManager.logMessage(Status.PASS, "\uD83C\uDF10 Switch to Iframe default: ");
+        ExtentTestManager.logMessage(Status.PASS, " Switch to Iframe default: ");
     }
     @Step("Upload file with sendkey {1} to element {0}")
     public static void uploadFileSendKey(By by, String path) {
