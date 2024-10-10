@@ -44,3 +44,5 @@ target/
 exports/
 logs/
 pom.xml.versionsBackup
+
+git rm -r --cached .idea exports logs pom.xml.versionsBackup
