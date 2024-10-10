@@ -41,6 +41,6 @@ build/
 out/
 target/
 *.iml
-exporst/
+exports/
 logs/
-pom.xml.versionBackup
+pom.xml.versionsBackup

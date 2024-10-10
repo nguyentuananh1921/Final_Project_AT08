@@ -1,1 +1,0 @@
-Attribute value:: By.xpath: //label[normalize-space()='Address']//following-sibling::input[@name='address_1'] is: Suite 575 2814 Schimmel Groves, Morissetteburgh, IN 21683
